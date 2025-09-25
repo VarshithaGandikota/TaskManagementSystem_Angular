@@ -1,0 +1,46 @@
+<app-layout></app-layout>
+<!-- <p>task-view works!</p> -->
+<!-- <div class="container mt-5">
+    <h2>Task Details</h2>
+    <div *ngIf="task">
+      <p><strong>Title:</strong> {{ task.title }}</p>
+      <p><strong>Start Date:</strong> {{ task.task_start_date }}</p>
+      <p><strong>End Date:</strong> {{ task.task_end_date }}</p>
+      <p><strong>Status:</strong> {{ task.task_status }}</p>
+      <p><strong>Assignee:</strong> {{ task.task_assigne }}</p>
+      <p><strong>Description:</strong> {{ task.task_description }}</p>
+      <p><strong>Comments:</strong> {{ task.task_comments }}</p>
+      <p><strong>Reported By:</strong> {{ task.task_reported }}</p>
+    </div>
+  </div>
+   -->
+
+
+   <div class="container mt-5">
+    <h2>Task Details</h2>
+    <div class="card" *ngIf="task">
+        <div class="card-body">
+            <h4 class="card-title">{{task.task_id}}/{{task.task_no}}</h4>
+            <p class="card-text">
+                <h6><strong>Title:</strong>{{ task.title }}</h6>
+                <strong>Start Date:</strong> {{ task.task_start_date }}<br>
+                <strong>Update Date:</strong> {{ task.task_update_date }}<br>
+                <strong>End Date:</strong> {{ task.task_end_date }}<br>
+                <strong>Description:</strong> {{ task.task_description }}<br>
+                <strong>Assignee:</strong> {{ task.task_assigne }}<br>
+                <strong>Comments:</strong>
+                <div class="form-group">
+                    <textarea class="form-control" [(ngModel)]="task.task_comments" rows="3" placeholder="Add a comment..."></textarea>
+                </div>
+    
+            <div class="d-flex justify-content-between mt-3">
+                <div>
+                    <strong>Status:</strong> {{ task.task_status }}<br>
+                    <strong>Reported By:</strong> {{ task.task_reported }}
+                </div>
+            </div>
+            <button (click)="onBack()">Back</button>
+        </div>
+        
+    </div>
+</div>

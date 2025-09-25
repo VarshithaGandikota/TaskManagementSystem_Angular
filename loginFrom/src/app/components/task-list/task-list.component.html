@@ -1,0 +1,59 @@
+<app-layout></app-layout>
+<!-- <p>task-list works!</p> -->
+ <!-- task-list.component.html -->
+
+
+
+
+
+<!-- 
+  <div>
+<h2>Tasks for Project ID:{{proj_id}} {{task.project.proj_name}}</h2>
+<div class="container">
+  
+  
+    <ul *ngIf="tasks.length; else noTasks">
+      <li *ngFor="let task of tasks">
+        <h3>{{task.task_id}}/{{ task.task_no}}</h3>
+        <p><strong>Title:</strong> {{ task.title }}</p>
+        <p><strong>Assigned To:</strong> {{ task.task_assigne }}</p>
+        <p><strong>Reported By:</strong> {{ task.task_reported }}</p>
+        <p><strong>Start Date:</strong> {{ task.task_start_date }}</p>
+        <p><strong>Description:</strong> {{ task.task_description }}</p>
+      </li>
+    </ul>
+  
+    <ng-template #noTasks>
+      <p>No tasks found for this project.</p>
+    </ng-template>
+  </div> -->
+  
+
+
+  <div class="container mt-5">
+    <h2>Tasks for Project : {{ proj_id }}</h2>
+    <div class="row">
+      <!-- Iterate over tasks and display each task in a card -->
+      <div class="col-md-4" *ngFor="let task of tasks">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Task No: {{ task.task_no }}</h5>
+            <p class="card-text"><strong>Title:</strong> {{ task.title }}</p>
+            <p class="card-text"><strong>Start Date:</strong> {{ task.task_start_date }}</p>
+            <p class="card-text"><strong>Assignee:</strong> {{ task.task_assigne }}</p>
+            <p class="card-text"><strong>Reported By:</strong> {{ task.task_reported }}</p>
+            <p class="card-text"><strong>Description:</strong> {{ task.task_description }}</p>
+            <small class="text-muted">Status: {{ task.task_status }}</small><br>
+          </div>
+          <div class="card-footer">
+           
+            
+            <button (click)="toView(proj_id,task.task_no)">View</button>
+            <button (click)="toUpdate(proj_id,task.task_id,task.task_no)">Update</button>
+            <button  (click)="deleteTask(task.task_no)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
