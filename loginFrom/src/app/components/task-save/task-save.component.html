@@ -1,0 +1,87 @@
+<app-layout></app-layout>
+<!-- <p>task-save works!</p> -->
+<!-- <form (ngSubmit)="createTask()">
+    <label for="task_no">Task Number:</label>
+    <input id="task_no" [(ngModel)]="task.task_no" name="task_no" required>
+  
+    <label for="title">Title:</label>
+    <input id="title" [(ngModel)]="task.title" name="title" required>
+  
+     Add more form fields as needed -->
+  
+    <!-- <label for="projId">Project ID:</label>
+    <input id="projId"  value={{projectId}} name="projId" type="number" required>
+  
+    <label for="userId">User ID:</label>
+    <input id="userId" [(ngModel)]="userId" name="userId" type="number" required>
+  
+    <button type="submit">Create Task</button> -->
+  <!-- </form>  -->
+
+  <div class="container mt-5">
+    <h2>Create Task</h2>
+    <form [formGroup]="taskForm">
+
+      <div class="form-group">
+      <label for="projId">Project ID:</label>
+      <input id="projId"  value={{projectId}}  formControlName="projId" class="form-control" type="number">
+    </div>
+    <div class="form-group">
+      <label for="userId">User ID:</label>
+      <input id="userId" value={{userId}} formControlName="userId" class="form-control" type="number" >
+    </div>
+
+     <!-- Task Number -->
+     <div class="form-group">
+      <label for="task_no">Task No</label>
+      <input id="task_no" formControlName="task_no" class="form-control" />
+    </div>
+
+      <!-- Task Title -->
+      <div class="form-group">
+        <label for="title">Task Title</label>
+        <input id="title" formControlName="title" class="form-control" />
+      </div>
+  
+      <!-- Start Date -->
+      <div class="form-group">
+        <label for="task_start_date">Start Date</label>
+        <input type="date" id="task_start_date" formControlName="task_start_date" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="task_status">Task Status:{{task.task_status}}</label>
+        <input id="task_status" value="open" formControlName="task_status" class="form-control" type="text" >
+      </div>
+     
+  
+      <!-- End Date -->
+      <!-- <div class="form-group">
+        <label for="task_end_date">End Date</label>
+        <input type="date" id="task_end_date" formControlName="task_end_date" class="form-control" />
+      </div> -->
+  
+      
+      <!-- Assignee -->
+      <div class="form-group">
+        <label for="task_assigne">Assignee</label>
+        <input id="task_assigne" formControlName="task_assigne" class="form-control" />
+      </div>
+  
+      <!-- Description -->
+      <div class="form-group">
+        <label for="task_description">Description</label>
+        <textarea id="task_description" formControlName="task_description" class="form-control"></textarea>
+      </div>
+  
+      <!-- Reported By -->
+      <div class="form-group">
+        <label for="task_reported">Reported By</label>
+        <input id="task_reported" formControlName="task_reported" class="form-control" />
+      </div>
+  
+      <!-- Buttons -->
+      <button type="submit" (click)="createTask()" class="btn btn-primary">Create Task</button>
+      <button type="button" (click)="onCancel()" class="btn btn-secondary">Cancel</button>
+    </form>
+  </div>
+  

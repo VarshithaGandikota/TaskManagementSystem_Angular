@@ -1,0 +1,43 @@
+<!-- <p>user-signup works!</p> -->
+<!-- <div class="container">
+    <h2>Sign Up</h2>
+    <form (ngSubmit)="signup()">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" [(ngModel)]="user.username" name="username" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="user.email" name="email" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" [(ngModel)]="user.password" name="password" required>
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+  
+    <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </div> -->
+  
+
+  <div class="container mt-5">
+    <h2>User SignUp</h2>
+    <form #projectForm="ngForm" (ngSubmit)="signup()">
+      <div class="form-group">
+        <label for="username">User Name</label>
+        <input type="text" class="form-control" id="username" required [(ngModel)]="user.username" name="username">
+      </div>
+      <div class="form-group">
+        <label for="email">User Email</label>
+        <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="pasword">User Password</label>
+        <input type="text" class="form-control" id="password" required [(ngModel)]="user.password" name="password">
+      </div>
+      <button type="submit" class="btn btn-primary">Save Project</button>
+      <button type="submit" class="btn btn-primary" [routerLink]="['/login']" >Cancel</button>
+    </form>
+  </div>

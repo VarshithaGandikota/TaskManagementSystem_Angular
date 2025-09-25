@@ -1,0 +1,30 @@
+<!-- <p>project-save works!</p> -->
+ <app-layout></app-layout>
+<div class="container mt-5">
+    <h2>Create New Project</h2>
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+      <div class="form-group">
+        <label for="proj_name">Project Name</label>
+        <input type="text" class="form-control" id="proj_name" required [(ngModel)]="project.proj_name" name="proj_name">
+      </div>
+      <div class="form-group">
+        <label for="proj_owner">Project Owner</label>
+        <input type="text" class="form-control" id="proj_owner" required [(ngModel)]="project.proj_owner" name="proj_owner">
+      </div>
+      <div class="form-group">
+        <label for="proj_created_date">Created Date</label>
+        <input type="date" class="form-control" id="proj_created_date" required [(ngModel)]="project.proj_created_date" name="proj_created_date">
+      </div>
+      <div class="form-group">
+        <label for="proj_description">Description</label>
+        <textarea class="form-control" id="proj_description" [(ngModel)]="project.proj_description" name="proj_description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="user">User ID</label>
+        <input type="number" class="form-control" id="user_id" required [(ngModel)]="project.user.user_id" name="user_id">
+      </div>
+      <button type="submit" class="btn btn-primary">Save Project</button>
+      <button type="submit" class="btn btn-primary" [routerLink]="['/project-list']" >Cancel</button>
+    </form>
+  </div>
+  
